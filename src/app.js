@@ -14,10 +14,10 @@ const DiFramework = require('./diFramework');
 
 DiFramework.use(require('./classes/car'));
 DiFramework.use(require('./classes/engine'));
+// DiFramework.use(require('./classes/gearbox'));
 
-setTimeout(() => {
-  DiFramework.use(require('./classes/gearbox'));
-}, 2500);
+
+
 
 class AppBoostrap {
   constructor(Car) {
@@ -38,3 +38,5 @@ function waitForAppDone() {
     }, 100);
   }
 }
+
+waitForAppDone();
