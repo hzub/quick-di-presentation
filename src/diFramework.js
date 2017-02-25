@@ -17,6 +17,7 @@ class DiFramework {
   _set(name, val) {
     // sets object in the map
     this._objects[name] = val;
+    console.info(`[DI] ADDED ${name} CLASS TO REPOSITORY!`);
   }
 
   use(classDefinition) {
@@ -26,11 +27,16 @@ class DiFramework {
     // get injects (or empty set if none)
     const injectNames = classDefinition.$inject || [];
 
+    if (injectNames.length) {
+      console.info(`[DI] CLASS ${name} NEEDS ${injectNames.join(', ')}!`);
+    }
+
     // get inject values
     const injects = injectNames.map(name => this.getObject(name));
 
     // create instance...
     const objectInstance = new classDefinition(...injects);
+
 
     // ...and put it into repository
     this._set(name, objectInstance);
