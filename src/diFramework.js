@@ -8,6 +8,9 @@ class DiFramework {
     // initialize DI queue
     this._queue = [];
 
+    // initialize DI queue
+    this._callbackQueue = [];
+
     // create singleton
     DiFramework.$instance = this;
   }
@@ -35,6 +38,8 @@ class DiFramework {
         if (this.use(queuedClass.classDefinition)) {
           console.info(`[DI] ${queuedClass.name} FINALLY RESOLVED! :D`);
           _.pull(this._queue, queuedClass);
+
+          return false;
         }
       }
     });
@@ -44,7 +49,6 @@ class DiFramework {
     if (_.find(this._queue, { name })) {
       return;
     }
-
     this._queue.push({
       name,
       classDefinition,
