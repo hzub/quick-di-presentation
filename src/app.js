@@ -10,9 +10,9 @@ Fiat.go();
 
 const DiFramework = require('./diFramework');
 
+DiFramework.use(require('./classes/car'));
 DiFramework.use(require('./classes/engine'));
 DiFramework.use(require('./classes/gearbox'));
-DiFramework.use(require('./classes/car'));
 
 const myAppCar = DiFramework.getObject('Car');
 
