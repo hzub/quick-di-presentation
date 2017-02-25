@@ -18,4 +18,6 @@ class Car {
   }
 }
 
+Car.$inject = ['Engine', 'Gearbox'];
+
 module.exports = Car;
