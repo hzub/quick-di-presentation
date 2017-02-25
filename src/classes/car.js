@@ -1,10 +1,7 @@
-const Engine = require('./engine');
-const Gearbox = require('./gearbox');
-
 class Car {
-  constructor() {
-    this.engine = new Engine();
-    this.gearbox = new Gearbox();
+  constructor(engine, gearbox) {
+    this.engine = engine;
+    this.gearbox = gearbox;
   }
 
   go() {

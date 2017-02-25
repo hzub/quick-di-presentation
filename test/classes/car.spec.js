@@ -2,9 +2,28 @@ const Car = require('../../src/classes/car');
 
 const assert = require('chai').assert;
 
+class MockGearbox {
+  changeGear() {}
+  getGear() {
+    return 1;
+  }
+}
+
+class MockEngine {
+  work() {}
+  isWorking() {
+    return true;
+  }
+}
+
 let testCar;
+let testEngine;
+let testGearbox;
+
 beforeEach(() => {
-  testCar = new Car();
+  testGearbox = new MockGearbox();
+  testEngine = new MockEngine();
+  testCar = new Car(testEngine, testGearbox);
 });
 
 describe('car test', () => {
