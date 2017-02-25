@@ -12,6 +12,13 @@ class Car {
     this.engine.work();
     console.info('Pojechali!');
   }
+
+  isGoing() {
+    const isOnGear = this.gearbox.getGear() > 0;
+    const isEngineRunning = this.engine.isWorking();
+
+    return (isOnGear && isEngineRunning);
+  }
 }
 
 module.exports = Car;
