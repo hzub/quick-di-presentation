@@ -16,6 +16,10 @@ class DiFramework {
     // get injects (or empty set if none)
     const injectNames = classDefinition.$inject || [];
 
+    if (injectNames.length) {
+      console.info(`[DI] CLASS ${name} NEEDS ${injectNames.join(', ')}!`);
+    }
+
     // get inject values
     const injects = injectNames.map(name => this.getObject(name));
 
