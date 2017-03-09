@@ -1,34 +1,25 @@
-/*
-const Car = require('./classes/car');
-const Engine = require('./classes/engine');
-const Gearbox = require('./classes/gearbox');
+// ----------------------------
+// bootstrapper class
+//
+class AppBoostrap {
+  constructor(Motherboard) {
+    Motherboard.start();
 
-const Fiat = new Car(new Engine(), new Gearbox());
-
-Fiat.go();
-*/
+    appDone = true;
+  }
+}
+AppBoostrap.$inject = ['Motherboard'];
+// ----------------------------
 
 let appDone = false;
 
 const DiFramework = require('./diFramework');
 
-DiFramework.use(require('./classes/car'));
-DiFramework.use(require('./classes/engine'));
-// DiFramework.use(require('./classes/gearbox'));
-
-
-
-
-class AppBoostrap {
-  constructor(Car) {
-    Car.go();
-
-    appDone = true;
-  }
-}
-AppBoostrap.$inject = ['Car'];
-
+DiFramework.use(require('./classes/motherboard'));
+DiFramework.use(require('./classes/memory'));
+DiFramework.use(require('./classes/processor'));
 DiFramework.use(AppBoostrap);
+
 
 // waiter function
 function waitForAppDone() {
