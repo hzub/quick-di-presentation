@@ -1,7 +1,10 @@
-const Car = require('./classes/car');
-const Engine = require('./classes/engine');
-const Gearbox = require('./classes/gearbox');
+const Motherboard = require('./classes/motherboard');
+const Processor = require('./classes/processor');
+const Memory = require('./classes/memory');
 
-const Fiat = new Car(new Engine(), new Gearbox());
+const ourProcessor = new Processor();
+const ourMemory = new Memory();
 
-Fiat.go();
+const ourMotherboard = new Motherboard(ourProcessor, ourMemory);
+
+ourMotherboard.start();
