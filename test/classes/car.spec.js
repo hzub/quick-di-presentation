@@ -1,17 +1,17 @@
-const Car = require('../../src/classes/car');
+const Motherboard = require('../../src/classes/motherboard');
 
 const assert = require('chai').assert;
 
-let testCar;
+let testMotherboard;
 beforeEach(() => {
-  testCar = new Car();
+  testMotherboard = new Motherboard();
 });
 
-describe('car test', () => {
-  it ('should check if car is running after go()', () => {
-    testCar.go();
+describe('motherboard test', () => {
+  it ('should check if motherboard works running after start()', () => {
+    testMotherboard.start();
 
-    const going = testCar.isGoing();
+    const going = testMotherboard.isWorking();
     assert.isTrue(going);
   });
 });
