@@ -17,7 +17,7 @@ class DiFramework {
     const injectNames = classDefinition.$inject || [];
 
     if (injectNames.length) {
-      console.info(`[DI] CLASS ${name} NEEDS ${injectNames.join(', ')}!`);
+      console.info(`[DI] CLASS ${name} REQUIRES ${injectNames.join(', ')}!`);
     }
 
     // get inject values
