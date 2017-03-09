@@ -1,3 +1,3 @@
-const Car = require('./classes/car');
+const Motherboard = require('./classes/motherboard');
 
-const Fiat = new Car();
+const ourMotherboard = new Motherboard();
