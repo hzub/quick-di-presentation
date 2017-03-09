@@ -17,6 +17,4 @@ class Motherboard {
   }
 }
 
-Motherboard.$inject = ['Processor', 'Memory'];
-
 module.exports = Motherboard;
